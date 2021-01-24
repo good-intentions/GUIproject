@@ -1,6 +1,12 @@
 package GUI;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -20,23 +26,34 @@ public class Project  {
 	static String row = new String();
 	static String text = new String();
 	static int ocenka;
+	static ImageIcon icon = new ImageIcon("C:\\Users\\simeo\\Downloads\\empty.png");
+	static ImageIcon icon2 = new ImageIcon("C:\\Users\\simeo\\Downloads\\full.png");
 	//static FileReader reader = new FileReader("filmi.txt");
+	
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		FileReader reader = new FileReader("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\filmi.txt");
 		FileReader reader2 = new FileReader("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\seriali.txt");
 		
-		JFrame frame = new JFrame("Топ филми и/или сериали");
+		JFrame frame = new JFrame("Топ филми и сериали");
 		// Setting the width and height of frame
 		frame.setSize(550, 350);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
+		Image full = icon2.getImage();
+		Image modifiedF = full.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+		icon2 = new ImageIcon(modifiedF);
+		
+		Image empty = icon.getImage();
+		Image modifiedE = empty.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+		icon = new ImageIcon(modifiedE);
 		
 		JPanel panel = new JPanel();
 		// adding panel to frame
 		frame.add(panel);
 		panel.setLayout(null);
+		
 		
 		JLabel question = new JLabel("1. Кой е последният филм който сте гледали?");
 		/*
@@ -54,20 +71,23 @@ public class Project  {
 		JTextField input = new JTextField(20);
 		input.setBounds(10, 105, 300, 25);
 		panel.add(input);
+		input.setText("");
 	
 		JTextArea textArea = new JTextArea();
-        textArea.setBounds(325, 21, 180, 251);
+        textArea.setBounds(325, 21, 190, 251);
         panel.add(textArea);
         textArea.setEditable(false);  
         textArea.read(reader, "filmi.txt");
         textArea.setVisible(true);
+        //textArea.setFont(new Font("Serif", Font.ITALIC, 16));
         
         JTextArea textArea2 = new JTextArea();
-        textArea2.setBounds(325, 21, 180, 251);
+        textArea2.setBounds(325, 21, 190, 251);
         panel.add(textArea2);
         textArea2.setEditable(false);  
         textArea2.read(reader2, "seriali.txt");
         textArea2.setVisible(false);
+        //textArea2.setFont(new Font("Serif", Font.ITALIC, 16));
         
         JButton filmi = new JButton("Филми");
 		filmi.setBounds(35, 21, 100, 25);
@@ -91,82 +111,126 @@ public class Project  {
 		
         
         JButton zvezda1 = new JButton();
-		zvezda1.setBounds(35, 180, 25, 25);
+		zvezda1.setBounds(30, 190, 50, 50);
 		panel.add(zvezda1);
+		zvezda1.setIcon(icon);
+		zvezda1.setBorder(BorderFactory.createEmptyBorder());
+		zvezda1.setContentAreaFilled(false);
+		zvezda1.setBorderPainted(false);	
+		
+		JButton zvezda2 = new JButton(icon);
+		zvezda2.setBounds(85, 190, 50, 50);
+		panel.add(zvezda2);
+		zvezda2.setBorder(BorderFactory.createEmptyBorder());
+		zvezda2.setContentAreaFilled(false);
+		zvezda2.setBorderPainted(false);
+		
+		JButton zvezda3 = new JButton(icon);
+		zvezda3.setBounds(140, 190, 50, 50);
+		panel.add(zvezda3);
+		zvezda3.setBorder(BorderFactory.createEmptyBorder());
+		zvezda3.setContentAreaFilled(false);
+		zvezda3.setBorderPainted(false);
+		
+		JButton zvezda4 = new JButton(icon);
+		zvezda4.setBounds(195, 190, 50, 50);
+		panel.add(zvezda4);
+		zvezda4.setBorder(BorderFactory.createEmptyBorder());
+		zvezda4.setContentAreaFilled(false);
+		zvezda4.setBorderPainted(false);
+		
+		JButton zvezda5 = new JButton(icon);
+		zvezda5.setBounds(250, 190, 50, 50);
+		panel.add(zvezda5);
+		zvezda5.setBorder(BorderFactory.createEmptyBorder());
+		zvezda5.setContentAreaFilled(false);
+		zvezda5.setBorderPainted(false);
+		
 		zvezda1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	ocenka = 1;
+            	zvezda1.setIcon(icon2);
+            	zvezda2.setIcon(icon);
+            	zvezda3.setIcon(icon);
+            	zvezda4.setIcon(icon);
+            	zvezda5.setIcon(icon);
             }
 		});
-		
-		JButton zvezda2 = new JButton();
-		zvezda2.setBounds(65, 180, 25, 25);
-		panel.add(zvezda2);
 		zvezda2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	ocenka = 2;
+            	zvezda1.setIcon(icon2);
+            	zvezda2.setIcon(icon2);
+            	zvezda3.setIcon(icon);
+            	zvezda4.setIcon(icon);
+            	zvezda5.setIcon(icon);
             }
 		});
-		
-		JButton zvezda3 = new JButton();
-		zvezda3.setBounds(95, 180, 25, 25);
-		panel.add(zvezda3);
 		zvezda3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	ocenka = 3;
+            	zvezda1.setIcon(icon2);
+            	zvezda2.setIcon(icon2);
+            	zvezda3.setIcon(icon2);
+            	zvezda4.setIcon(icon);
+            	zvezda5.setIcon(icon);
             }
 		});
-		
-		JButton zvezda4 = new JButton();
-		zvezda4.setBounds(125, 180, 25, 25);
-		panel.add(zvezda4);
 		zvezda4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	ocenka = 4;
+            	zvezda1.setIcon(icon2);
+            	zvezda2.setIcon(icon2);
+            	zvezda3.setIcon(icon2);
+            	zvezda4.setIcon(icon2);
+            	zvezda5.setIcon(icon);
             }
 		});
-		
-		JButton zvezda5 = new JButton();
-		zvezda5.setBounds(155, 180, 25, 25);
-		panel.add(zvezda5);
 		zvezda5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	ocenka = 5;
+            	zvezda1.setIcon(icon2);
+            	zvezda2.setIcon(icon2);
+            	zvezda3.setIcon(icon2);
+            	zvezda4.setIcon(icon2);
+            	zvezda5.setIcon(icon2);
             }
 		});
-		
-		
 		
 		JButton enter = new JButton("Въведи");
 		enter.setBounds(130, 265, 110, 25);
 		enter.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-
-	             row = input.getText();
-	             input.setText("");
-	             
-	            if(textArea.isVisible()) {
 	            	
-	            	textArea.append(newline + row + " (" + ocenka + "/5)");
-	             try {
-	            	FileWriter writter = new FileWriter("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\filmi.txt", true);
-	         		BufferedWriter bw = new BufferedWriter(writter);
-					bw.write(newline + row + " (" + ocenka + "/5)");
+	            if(input.getText().equals("")){
+	            	
+	            }else {
+
+	               row = input.getText();
+	               input.setText("");
+	             
+	               if(textArea.isVisible()) {
+	            	
+	            	   textArea.append(newline + " - " + row + " (" + ocenka + "/5)");
+	                  try {
+	            	    FileWriter writter = new FileWriter("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\filmi.txt", true);
+	         		    BufferedWriter bw = new BufferedWriter(writter);
+					    bw.write(newline + " - " + row + " (" + ocenka + "/5)");
 					
-					bw.close();
-					writter.close();
-				  } catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				  }  
+					    bw.close();
+					    writter.close();
+				      } catch (IOException e1) {
+					    // TODO Auto-generated catch block
+					    e1.printStackTrace();
+				      }  
 
 	              }else{
 	            	  
-	            	  textArea2.append(newline + row + " (" + ocenka + "/5)");
-	 	             try {
+	            	    textArea2.append(newline + " - " + row + " (" + ocenka + "/5)");
+	 	              try {
 	 	            	FileWriter writter = new FileWriter("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\seriali.txt", true);
 	 	         		BufferedWriter bw = new BufferedWriter(writter);
-	 					bw.write(newline + row + " (" + ocenka + "/5)");
+	 					bw.write(newline + " - " + row + " (" + ocenka + "/5)");
 	 					
 	 					bw.close();
 	 					writter.close();
@@ -177,8 +241,9 @@ public class Project  {
 
 	              } 
 	            	
+	             }
 	            }
-	            });
+	           });
 		       
 		
 		
