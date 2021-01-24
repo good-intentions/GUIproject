@@ -53,6 +53,7 @@ public class Project  {
 		// adding panel to frame
 		frame.add(panel);
 		panel.setLayout(null);
+		panel.setBackground(Color.pink);
 		
 		
 		JLabel question = new JLabel("1. Кой е последният филм който сте гледали?");
@@ -63,6 +64,7 @@ public class Project  {
 		 */
 		question.setBounds(20, 75, 300, 25);
 		panel.add(question);
+		question.setFont(new Font("Serif", Font.ITALIC, 16));
 		
 		
 		/*
@@ -79,7 +81,9 @@ public class Project  {
         textArea.setEditable(false);  
         textArea.read(reader, "filmi.txt");
         textArea.setVisible(true);
-        //textArea.setFont(new Font("Serif", Font.ITALIC, 16));
+        textArea.setFont(new Font("Serif", Font.ITALIC, 16));
+        //textArea.setBackground(Color.PINK);
+        textArea.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         
         JTextArea textArea2 = new JTextArea();
         textArea2.setBounds(325, 21, 190, 251);
@@ -87,7 +91,9 @@ public class Project  {
         textArea2.setEditable(false);  
         textArea2.read(reader2, "seriali.txt");
         textArea2.setVisible(false);
-        //textArea2.setFont(new Font("Serif", Font.ITALIC, 16));
+        textArea2.setFont(new Font("Serif", Font.ITALIC, 16));
+        //textArea2.setBackground(Color.dark_gray);
+        textArea2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         
         JButton filmi = new JButton("Филми");
 		filmi.setBounds(35, 21, 100, 25);
@@ -111,12 +117,13 @@ public class Project  {
 		
         
         JButton zvezda1 = new JButton();
-		zvezda1.setBounds(30, 190, 50, 50);
+		zvezda1.setBounds(35, 190, 50, 50);
 		panel.add(zvezda1);
 		zvezda1.setIcon(icon);
 		zvezda1.setBorder(BorderFactory.createEmptyBorder());
 		zvezda1.setContentAreaFilled(false);
-		zvezda1.setBorderPainted(false);	
+		zvezda1.setBorderPainted(false);
+		zvezda1.setBackground(Color.PINK);
 		
 		JButton zvezda2 = new JButton(icon);
 		zvezda2.setBounds(85, 190, 50, 50);
@@ -124,27 +131,31 @@ public class Project  {
 		zvezda2.setBorder(BorderFactory.createEmptyBorder());
 		zvezda2.setContentAreaFilled(false);
 		zvezda2.setBorderPainted(false);
+		zvezda2.setBackground(Color.PINK);
 		
 		JButton zvezda3 = new JButton(icon);
-		zvezda3.setBounds(140, 190, 50, 50);
+		zvezda3.setBounds(135, 190, 50, 50);
 		panel.add(zvezda3);
 		zvezda3.setBorder(BorderFactory.createEmptyBorder());
 		zvezda3.setContentAreaFilled(false);
 		zvezda3.setBorderPainted(false);
+		zvezda3.setBackground(Color.PINK);
 		
 		JButton zvezda4 = new JButton(icon);
-		zvezda4.setBounds(195, 190, 50, 50);
+		zvezda4.setBounds(185, 190, 50, 50);
 		panel.add(zvezda4);
 		zvezda4.setBorder(BorderFactory.createEmptyBorder());
 		zvezda4.setContentAreaFilled(false);
 		zvezda4.setBorderPainted(false);
+		zvezda4.setBackground(Color.PINK);
 		
 		JButton zvezda5 = new JButton(icon);
-		zvezda5.setBounds(250, 190, 50, 50);
+		zvezda5.setBounds(235, 190, 50, 50);
 		panel.add(zvezda5);
 		zvezda5.setBorder(BorderFactory.createEmptyBorder());
 		zvezda5.setContentAreaFilled(false);
 		zvezda5.setBorderPainted(false);
+		zvezda5.setBackground(Color.PINK);
 		
 		zvezda1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -253,6 +264,7 @@ public class Project  {
 		JLabel question2 = new JLabel("2. За колко добър го намирате?");
 		question2.setBounds(20, 150, 300, 25);
 		panel.add(question2);
+		question2.setFont(new Font("Serif", Font.ITALIC, 16));
 
 
         
