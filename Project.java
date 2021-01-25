@@ -26,15 +26,14 @@ public class Project  {
 	static String row = new String();
 	static String text = new String();
 	static int ocenka;
-	static ImageIcon icon = new ImageIcon("C:\\Users\\simeo\\Downloads\\empty.png");
-	static ImageIcon icon2 = new ImageIcon("C:\\Users\\simeo\\Downloads\\full.png");
-	//static FileReader reader = new FileReader("filmi.txt");
-	
+	//static String path = new String("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\");
+	static ImageIcon icon = new ImageIcon("src\\GUI\\empty.png");
+	static ImageIcon icon2 = new ImageIcon("src\\GUI\\full.png");
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		FileReader reader = new FileReader("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\filmi.txt");
-		FileReader reader2 = new FileReader("C:\\Users\\simeo\\eclipse-workspace\\SiHello\\src\\GUI\\seriali.txt");
+		FileReader reader = new FileReader("src\\GUI\\filmi.txt");
+		FileReader reader2 = new FileReader("src\\GUI\\seriali.txt");
 		
 		JFrame frame = new JFrame("Топ филми и сериали");
 		// Setting the width and height of frame
